@@ -1,0 +1,164 @@
+body {
+    background-image: url(/images/image6.png);
+    animation: none;
+}
+
+.landing,
+.documents {
+    width: 100%;
+    height: 100%;
+    background-color: #0007;
+    position: absolute;
+    text-align: center;
+}
+
+.documents {
+    background-color: #32373e;
+    display: none;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 1s, transform .5s;
+    z-index: 3;
+    background-image: linear-gradient(#4c96b1b5, #967adcd9) ,url(/images/documents_bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.documents.show {
+    clip-path: circle(80% at 50% 50%);
+}
+
+.documents .title {
+    margin: 7vmin auto;
+    font-size: 10vmin;
+    width: 100%;
+    text-align: center;
+    font-family: 'Goldie Boxing', sans-serif;
+    color: #78cdeb;
+    transition: transform 1s, filter 1s, opacity 1s;
+    animation: floatingText 5s infinite linear;
+}
+
+.documents .content p {
+    width: 100%;
+    color: #CCC;
+    text-align: left;
+    font-family: 'Goldie Boxing', sans-serif;
+    font-size: 4vmin;
+    padding: 2vmin 20vmin;
+    transform: scale(3);
+    filter: blur(1vmin);
+    opacity: 0;
+    transition: transform 1s, filter 1s, opacity 1s;
+}
+
+.documents.show .content p {
+    transform: scale(1);
+    filter: blur(0);
+    opacity: 1;
+}
+
+.landing .title {
+    font-size: calc(8vmin + 8vmax);
+    width: 100%;
+    text-align: center;
+    margin: 10vmin auto 5vmin auto;
+    font-family: 'Indiana-Jonas', sans-serif;
+    color: #FFF;
+    position: relative;
+}
+
+.images > div {
+    margin: auto 5vmin;
+    background-image: linear-gradient(#FFF, #8edee4aa, transparent);
+    display: inline-block;
+    border-radius: 20px;
+    transition: background-size 2s, transform 2s;
+    position: relative;
+    /* box-shadow: 0 .5vmin 1vmin #0007; */
+}
+
+.images > div > div {
+    width: 25vmin;
+    height: 30vmin;
+    background-color: #000;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    margin: 1vmin;
+    /* box-shadow: 0 .2vmin .5vmin #0008; */
+}
+
+.images > div:hover {
+    transform: scale(1.05);
+}
+
+.images > div::before,
+.images > div::after 
+    content: '';
+    width: 40px;
+    height: 30px;
+    border:10px solid #FFF;
+    position: absolute;
+    top: -20px;
+    left: 80%;
+    border-radius:100% 20px 20px 0;
+    /* box-shadow:0 3px 0 rgba(0,0,0,0.3); */
+}
+
+.images > div::after {
+    transform:rotateY(180deg);
+    left: auto;
+    right: 20%;
+}
+
+/* .images > div::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 70px;
+    height: 30px;
+    background-image: url(/images/icons/gift_top.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+.images {
+    margin-top: 10vmin;
+}
+
+.btn {
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+}
+
+.line {
+    background-color: #FFF7;
+    margin: 0 auto;
+    height: .1vmin;
+    width: 100%;
+}
+
+.landing .content {
+    width: 100%;
+    margin: 5vmin auto;
+    text-align: center;
+}
+
+@keyframes floatingText {
+    0% {
+        transform: scale(1.02) rotate(2deg);
+    }
+    30% {
+        transform: scale(0.98) rotate(-2deg);
+    }
+    60% {
+        transform: scale(1) rotate(2deg);
+    }
+    100% {
+        transform: scale(1.02) rotate(2deg);
+    }
+}
